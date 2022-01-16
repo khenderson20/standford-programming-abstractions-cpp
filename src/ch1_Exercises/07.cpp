@@ -8,9 +8,29 @@
 
 #include <iostream>
 
+const int SENTINAL = -1;
+
 int main() {
 
+    std::cout << "This program finds the average of a list of numbers." << std::endl;
+    std::cout << "Use " << SENTINAL << " to signal the end of the list." << std::endl;
 
+    int total = 0, size = 0;
+
+    while(true) {
+        int value;
+        std::cout << " ? ";
+        std::cin >> value;
+
+        if(value == SENTINAL)
+            break;
+        else {
+            total += value;
+            size += 1;
+        }
+    }
+
+    std::cout << "The Average is " << total / size << std::endl;
 
     return 0;
 }
